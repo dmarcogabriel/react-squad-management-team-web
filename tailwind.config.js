@@ -13,6 +13,9 @@ module.exports = {
         background: '#F7F3F7',
         footer: '#F2EEF2',
       },
+      borderWidth: {
+        default: '1px',
+      },
     },
   },
 };
