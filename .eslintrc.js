@@ -1,5 +1,5 @@
 /*
-  Utilizei o styleguide do Airbnb
+  Airbnb style guide with some customizations
   https://airbnb.io/javascript/
  */
 module.exports = {
