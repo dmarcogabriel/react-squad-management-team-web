@@ -25,7 +25,7 @@ const DraggablePlayer = ({ player }) => {
         </p>
         <p className="text-base font-bold">
           Age:
-          <span className="text-primary-dark">{` ${'37'}`}</span>
+          <span className="text-primary-dark">{` ${player.age}`}</span>
         </p>
       </div>
       <p className="text-base font-bold">

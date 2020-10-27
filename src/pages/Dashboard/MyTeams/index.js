@@ -27,13 +27,11 @@ const MyTeams = ({ className }) => {
   };
 
   const handleOrderList = (comparationKey) => {
-    setMyTeams(
-      myTeams.sort(
-        (pl1, pl2) =>
-          +(pl1[comparationKey] > pl2[comparationKey]) ||
-          +(pl1[comparationKey] === pl2[comparationKey]) - 1
-      )
+    const sorted = myTeams.sort((pl1, pl2) =>
+      pl1[comparationKey].localeCompare(pl2[comparationKey])
     );
+
+    setMyTeams([...sorted]);
   };
 
   useEffect(() => {

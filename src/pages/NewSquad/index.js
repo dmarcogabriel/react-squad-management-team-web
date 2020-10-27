@@ -3,6 +3,9 @@ import { useFormik } from 'formik';
 import { object, string } from 'yup';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { differenceInYears } from 'date-fns';
+import lodash from 'lodash';
+import { parseDate } from '../../utils/parseDate';
 import Card from '../../common/Card';
 import Page from '../../common/Page';
 import TextInput from './TextInput';
@@ -17,12 +20,13 @@ import { useSquad } from '../../contexts/Squad';
 import { usePlayers } from '../../contexts/Players';
 import Tags from './Tags';
 
-const NewSquad = ({ history, location }) => {
+const NewSquad = ({ location, history }) => {
   const [formation, setFormation] = useState([]);
   const [typeOptions, setTypeOptions] = useState(TYPE_OPTIONS);
   const [search, setSearch] = useState('');
   const [playersList, setPlayersList] = useState([]);
   const [tags, setTags] = useState([]);
+  const [playersAges, setPlayersAges] = useState([]);
 
   const [, squadId] = location.search.split('=');
 
@@ -44,11 +48,13 @@ const NewSquad = ({ history, location }) => {
         type: string().required(),
       }),
     onSubmit: () => {
+      const ageAvg = lodash.mean(playersAges.filter((age) => age));
+
       if (squadId) {
         setSquads(
           squads.map((sq) => {
             if (sq.id === squadId) {
-              return { ...sq, ...values, tags, formation };
+              return { ...sq, ...values, tags, formation, ageAvg };
             }
             return sq;
           })
@@ -58,6 +64,7 @@ const NewSquad = ({ history, location }) => {
           ...values,
           formation,
           tags,
+          ageAvg,
           id: String(squads.length + 1),
         };
 
@@ -68,7 +75,7 @@ const NewSquad = ({ history, location }) => {
     },
   });
 
-  const loadPlayers = async (e) => {
+  const searchPlayers = async (e) => {
     setSearch(e);
 
     if (e.length > 3) {
@@ -80,7 +87,24 @@ const NewSquad = ({ history, location }) => {
           },
         });
 
-        setPlayersList(data.data);
+        const responseList = data.data.map((player) => {
+          let age;
+
+          if (player.birthdate) {
+            const birthdate = new Date(parseDate(player.birthdate));
+
+            age = player.birthdate
+              ? differenceInYears(new Date(), birthdate)
+              : 0;
+          }
+
+          return {
+            ...player,
+            age,
+          };
+        });
+
+        setPlayersList(responseList);
       } catch (error) {
         window.alert(
           'Error! Ops, something went wrong, please try again later.'
@@ -101,13 +125,14 @@ const NewSquad = ({ history, location }) => {
   };
 
   const addPlayerToList = (playerId, rowNumber, playerPosition) => {
-    const findPlayer = () =>
-      playersList.find((player) => player.player_id === playerId);
+    const foundPlayer = playersList.find(
+      (player) => player.player_id === playerId
+    );
 
     const setPlayers = (row) =>
       row.players.map((player) => {
         if (player.position === playerPosition) {
-          return { ...player, player: findPlayer() };
+          return { ...player, player: foundPlayer };
         }
         return player;
       });
@@ -121,7 +146,9 @@ const NewSquad = ({ history, location }) => {
       })
     );
 
-    setPickedPlayers((oldPlayers) => [...oldPlayers, findPlayer()]);
+    setPlayersAges([...playersAges, foundPlayer.age]);
+
+    setPickedPlayers((oldPlayers) => [...oldPlayers, foundPlayer]);
   };
 
   const setSquadFormation = (e) => {
@@ -141,6 +168,7 @@ const NewSquad = ({ history, location }) => {
     handleChange('formationNumbers')(e.label);
 
     setSquadFormation(e.label);
+    setPlayersAges([]);
   };
 
   const showPlayerOnList = (player) => {
@@ -160,8 +188,6 @@ const NewSquad = ({ history, location }) => {
   useEffect(() => {
     if (squadId) {
       const squadFounded = squads.find((sq) => sq.id === squadId);
-
-      console.log(squadFounded);
 
       setSquadFormation(squadFounded.formationNumbers);
       setTypeOptions(
@@ -292,7 +318,7 @@ const NewSquad = ({ history, location }) => {
                   label="Search Players"
                   id="searchPlayers"
                   value={search}
-                  onChange={loadPlayers}
+                  onChange={searchPlayers}
                 />
 
                 <div>

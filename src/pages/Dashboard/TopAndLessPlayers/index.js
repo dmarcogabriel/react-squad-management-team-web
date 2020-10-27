@@ -6,21 +6,36 @@ import Content from './Content';
 const TopAndLessPlayers = () => {
   const [mostPickedPlayer, setMostPickedPlayer] = useState(null);
   const [lessPickedPlayer, setLessPickedPlayer] = useState(null);
+  const [mostPickedPercentage, setMostPickedPercentage] = useState(0);
+  const [lessPickedPercentage, setLessPickedPercentage] = useState(0);
 
   const [players] = usePlayers();
 
   useEffect(() => {
     if (players && players.length) {
-      const allPlayers = lodash.groupBy(players, 'player_id');
+      const groupedPlayers = lodash.groupBy(players, 'player_id');
 
-      const a = Object.keys(allPlayers).map((k) => allPlayers[k]);
+      const groupedPlayersList = Object.keys(groupedPlayers).map(
+        (k) => groupedPlayers[k]
+      );
 
-      const [mostPicked] = a.reduce((b, c) => (b.length > c.length ? b : c));
+      const playerMostPickedOccurrency = groupedPlayersList.reduce((b, c) =>
+        b.length > c.length ? b : c
+      );
+      const playerLessPickedOccurrency = groupedPlayersList.reduce((b, c) =>
+        b.length > c.length ? c : b
+      );
 
-      const [lessPicked] = a.reduce((b, c) => (b.length > c.length ? c : b));
+      setMostPickedPercentage(
+        groupedPlayersList.length / playerMostPickedOccurrency.length
+      );
 
-      setMostPickedPlayer(mostPicked);
-      setLessPickedPlayer(lessPicked);
+      setLessPickedPercentage(
+        groupedPlayersList.length / playerLessPickedOccurrency.length
+      );
+
+      setMostPickedPlayer(playerMostPickedOccurrency[0]);
+      setLessPickedPlayer(playerLessPickedOccurrency[0]);
     }
   }, []);
 
@@ -29,13 +44,13 @@ const TopAndLessPlayers = () => {
       <Content
         className="border-b-2 md:border-r-2 md:border-b-0 border-opacity-25 border-white"
         playerName={mostPickedPlayer && mostPickedPlayer.display_name}
-        percentage="0%"
+        percentage={`${mostPickedPercentage.toFixed()}%`}
         title="Most picked player"
       />
 
       <Content
         playerName={lessPickedPlayer && lessPickedPlayer.display_name}
-        percentage="0%"
+        percentage={`${lessPickedPercentage.toFixed()}%`}
         title="Less picked player"
       />
     </div>
