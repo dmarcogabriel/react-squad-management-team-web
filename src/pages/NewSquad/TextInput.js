@@ -7,9 +7,10 @@ const TextInput = ({
   id,
   error,
   onChange = () => {},
+  className = '',
   ...props
 }) => (
-  <div>
+  <div className="w-full">
     <label htmlFor={id}>
       <p className={cn('font-bold text-base', error && 'text-primary-dark ')}>
         {label}
@@ -19,8 +20,9 @@ const TextInput = ({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className={cn(
-          'border-2 rounded p-1 focus:border-gray-500',
-          error && 'border-primary-dark focus:border-primary-dark'
+          'border-2 w-full rounded p-1 focus:border-gray-500',
+          error && 'border-primary-dark focus:border-primary-dark',
+          className
         )}
         {...props}
       />
