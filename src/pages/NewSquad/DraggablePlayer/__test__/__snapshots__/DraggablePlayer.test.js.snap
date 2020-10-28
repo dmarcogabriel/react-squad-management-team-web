@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DraggablePlayer /> match snapshot 1`] = `
+<DndProvider
+  backend={[Function]}
+>
+  <DraggablePlayer
+    player={
+      Object {
+        "age": 24,
+        "fullname": "Mock Player",
+        "nationality": "Mockland",
+        "player_id": "m1",
+      }
+    }
+  />
+</DndProvider>
+`;

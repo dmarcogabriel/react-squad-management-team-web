@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content tests match snapshot 1`] = `
+<div
+  className="w-full p-5 class-test"
+  data-testid="className"
+>
+  <h2
+    className="font-bold text-lg text-center"
+    data-testid="title"
+  >
+    Test title
+  </h2>
+  <div
+    className="relative flex justify-center my-3"
+  >
+    <div
+      className="relative p-12 bg-white text-primary-dark rounded-full"
+    >
+      <p
+        className="text-3xl absolute w-full h-full flex justify-center items-center top-0 left-0 right-0"
+        data-testid="playerName"
+      >
+        TPN
+      </p>
+    </div>
+    <p
+      className="absolute right-0 top-0 text-base border-b-2 border-white pr-5"
+      data-testid="percentage"
+    >
+      25%
+    </p>
+  </div>
+</div>
+`;

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Formation /> matches snapshot 1`] = `
+<div
+  className="bg-gradient-to-t from-secondary-dark to-secondary-light rounded-sm p-2 mb-5 justify-center"
+/>
+`;

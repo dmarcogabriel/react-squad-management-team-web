@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Radio /> match snapshot 1`] = `
+<div
+  className=""
+>
+  <p
+    className="font-bold text-base mb-2"
+  />
+  <div
+    className="flex justify-between"
+  />
+</div>
+`;

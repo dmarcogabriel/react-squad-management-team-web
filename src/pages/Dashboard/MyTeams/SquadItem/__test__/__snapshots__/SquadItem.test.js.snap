@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<tr>
+  <td>
+    <button
+      className="relative border-b-2 border-gray-200 rounded p-2 flex w-full text-primary-dark bg-primary-light"
+      data-testid="squadItem"
+      onClick={[Function]}
+      type="button"
+    >
+      <p
+        className="inline mr-10"
+      >
+        mock1
+      </p>
+      <p
+        className="inline ml-2"
+      >
+        This is the descript
+      </p>
+      <div
+        className="flex items-center absolute h-full right-0 top-0 mr-3"
+        data-testid="actionButtons"
+      >
+        <button
+          data-testid="squadItem-delete"
+          onClick={[Function]}
+          type="button"
+        >
+          <FaTrashAlt />
+        </button>
+        <button
+          className="mx-2"
+          type="button"
+        >
+          <MdShare />
+        </button>
+        <Link
+          to="create?squadId=m1"
+        >
+          <MdEdit />
+        </Link>
+      </div>
+    </button>
+  </td>
+</tr>
+`;

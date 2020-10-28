@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+Array [
+  <nav
+    className="flex px-8 py-2 items-center justify-between bg-gradient-to-r from-primary-dark to-secondary-dark text-white"
+    data-testid="header"
+  >
+    <div>
+      <p
+        className="text-lg"
+      >
+        Squad Management Tool
+      </p>
+    </div>
+    <div
+      className="flex items-center"
+    >
+      <p
+        className="text-sm mr-2 invisible md:visible"
+      >
+        John Doe
+      </p>
+      <p
+        className="bg-white py-2 px-3 rounded-full text-black"
+      >
+        JD
+      </p>
+    </div>
+  </nav>,
+  <div
+    className="flex flex-col md:flex-row bg-background justify-center w-full px-5 md:px-10"
+    data-testid="page"
+  >
+    <div>
+      <h1>
+        This is a header 1 from Page
+      </h1>
+    </div>
+  </div>,
+  <div
+    className="bg-footer py-3 flex justify-center"
+    data-testid="footer"
+  >
+    <p
+      className="text-sm text-gray-900"
+      data-testid="footer-text"
+    >
+      2020 - All rights reserved
+    </p>
+  </div>,
+]
+`;

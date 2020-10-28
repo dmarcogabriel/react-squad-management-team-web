@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopAndLessPlayers tests matches snapshot 1`] = `
+<div
+  className="rounded-lg flex flex-col md:flex-row shadow-lg bg-gradient-to-t from-secondary-dark to-secondary-light text-white mb-5"
+>
+  <Content
+    className="border-b-2 md:border-r-2 md:border-b-0 border-opacity-25 border-white"
+    percentage="0%"
+    playerName={null}
+    title="Most picked player"
+  />
+  <Content
+    percentage="0%"
+    playerName={null}
+    title="Less picked player"
+  />
+</div>
+`;

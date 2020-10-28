@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tags /> match snapshot 1`] = `
+<div>
+  <label
+    htmlFor="tags"
+  >
+    <p
+      className="font-bold text-base"
+    >
+      Tags
+    </p>
+    <button
+      className="flex rounded border-2 border-gray-400 my-3 py-2 w-full min-height-3 z-10"
+      data-testid="button-field"
+      onClick={[Function]}
+      type="button"
+    >
+      <div
+        className="flex flex-wrap relative"
+        data-testid="tags"
+      >
+        <p
+          className="inline text-base"
+          data-testid="value"
+        />
+      </div>
+      <textarea
+        className="opacity-0 resize-none absolute z-0"
+        data-testid="textarea"
+        id="tags"
+        onChange={[Function]}
+        value=""
+      />
+    </button>
+  </label>
+</div>
+`;

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="bg-white rounded-lg shadow-lg my-10 w-full my-5"
+  data-testid="card"
+>
+  <div
+    className="flex p-8 justify-between items-center border-b-2 border-gray-200"
+  >
+    <h1
+      className="text-secondary-dark font-bold text-md"
+      data-testid="card-title"
+    >
+      This is a test
+    </h1>
+    <span>
+      Right component
+    </span>
+  </div>
+  <div
+    className="py-5 px-2 my-5"
+    data-testid="card-children"
+  >
+    Children test
+  </div>
+</div>
+`;

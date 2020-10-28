@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopFive component tests match snapshot 1`] = `
+<Card
+  title="Top 5"
+>
+  <div
+    className="flex flex-col md:flex-row mx-2"
+  >
+    <div
+      className="w-full mb-5 md:mr-8"
+    >
+      <h2
+        className="text-base mb-3"
+      >
+        Highest avg age
+      </h2>
+      <div
+        className="bg-background rounded-lg p-1"
+      />
+    </div>
+    <div
+      className="w-full"
+    >
+      <h2
+        className="text-base mb-3"
+      >
+        Lowest avg age
+      </h2>
+      <div
+        className="bg-background rounded-lg p-1"
+      />
+    </div>
+  </div>
+</Card>
+`;

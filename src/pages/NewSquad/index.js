@@ -13,8 +13,7 @@ import Radio from './Radio';
 import Select from './Select';
 import Formation from './Formation';
 import api from '../../services/api';
-import { FORMATION_OPTIONS } from './formationOptions';
-import { TYPE_OPTIONS } from './typeOptions';
+import { FORMATION_OPTIONS, TYPE_OPTIONS } from './defaultValues';
 import DraggablePlayer from './DraggablePlayer';
 import { useSquad } from '../../contexts/Squad';
 import { usePlayers } from '../../contexts/Players';
@@ -48,6 +47,10 @@ const NewSquad = ({ location, history }) => {
         type: string().required(),
       }),
     onSubmit: () => {
+      if (!formation.length) {
+        window.alert('Ops!', 'The squad needs a formation.');
+      }
+
       const ageAvg = lodash.mean(playersAges.filter((age) => age));
 
       if (squadId) {
@@ -233,6 +236,7 @@ const NewSquad = ({ location, history }) => {
                   <p className="font-bold text-base">Description</p>
 
                   <textarea
+                    data-testid="description"
                     id="description"
                     className="resize-none w-full my-3 p-1 border-2 border-gray-400 rounded"
                     rows="5"
@@ -314,6 +318,7 @@ const NewSquad = ({ location, history }) => {
 
               <div className="md:w-full md:px-20">
                 <TextInput
+                  data-testid="search-input"
                   className="mb-5"
                   label="Search Players"
                   id="searchPlayers"
@@ -322,13 +327,16 @@ const NewSquad = ({ location, history }) => {
                 />
 
                 <div>
-                  {playersList.map((player, i) => {
-                    return (
+                  {playersList.map(
+                    (player, i) =>
                       showPlayerOnList(player) && (
-                        <DraggablePlayer key={String(i)} player={player} />
+                        <DraggablePlayer
+                          data-testid="player"
+                          key={String(i)}
+                          player={player}
+                        />
                       )
-                    );
-                  })}
+                  )}
                 </div>
               </div>
             </div>

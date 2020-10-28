@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select component tests match snapshot 1`] = `
+<div
+  className="relative w-40"
+>
+  <button
+    className="bg-white border-2 border-gray-600 rounded cursor-pointer"
+    data-testid="button"
+    onClick={[Function]}
+    type="button"
+  >
+    <div
+      className="flex"
+    >
+      <p
+        className="py-1 w-24"
+        data-testid="value"
+      >
+        Chose one...
+      </p>
+      <div
+        className="border-l-2 border-gray-600 flex items-center justify-center px-1"
+      >
+        <MdKeyboardArrowDown
+          className="text-black"
+          size={24}
+        />
+      </div>
+    </div>
+  </button>
+</div>
+`;

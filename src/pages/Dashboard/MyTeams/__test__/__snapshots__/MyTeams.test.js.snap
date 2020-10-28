@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing MyTeams component match snapshot 1`] = `
+<Card
+  RightComponent={[Function]}
+  title="My Teams"
+>
+  <table
+    className="w-full"
+  >
+    <thead>
+      <tr
+        className="text-base flex"
+      >
+        <th>
+          <button
+            className="flex items-center mx-3 py-2 border-r-2 border-gray-200"
+            onClick={[Function]}
+            type="button"
+          >
+            <p
+              className="font-normal mr-5"
+            >
+              Name
+            </p>
+            <CgArrowsV
+              className="mx-2"
+            />
+          </button>
+        </th>
+        <th>
+          <button
+            className="flex items-center w-full mx-3 py-2"
+            onClick={[Function]}
+            type="button"
+          >
+            <p
+              className="font-normal mr-5"
+            >
+              Description
+            </p>
+            <CgArrowsV
+              className="mx-2"
+            />
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</Card>
+`;

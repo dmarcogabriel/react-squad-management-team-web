@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextInput /> match snapshot 1`] = `
+<div
+  className="w-full"
+>
+  <label>
+    <p
+      className="font-bold text-base"
+      data-testid="label"
+    />
+    <input
+      className="border-2 w-full rounded p-1 focus:border-gray-500"
+      data-testid="input"
+      onChange={[Function]}
+    />
+  </label>
+</div>
+`;
