@@ -12,9 +12,13 @@ In the root directory of the app, run this command:
 
 ## Running app
 
-To run app on production mode, run the command bellow:
+To run app on production mode, run the command bellow to build the production app:
 
 `$ yarn build`
+
+And this command to run application:
+
+`$ yarn start`
 
 This command will build the css library, run react in production mode and serve in [localhost on the port 5000](http://localhost:5000).
 
