@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { render, cleanup } from '@testing-library/react';
 import Content from '..';
 
-describe('Content tests', () => {
+describe('<Content />', () => {
   afterEach(cleanup);
 
   it('renders without crashing', () => {
@@ -46,15 +46,15 @@ describe('Content tests', () => {
   });
 
   it('match snapshot', () => {
-    const wrapper = shallow(
-      <Content
-        title="Test title"
-        playerName="Test Player Name"
-        percentage="25%"
-        className="class-test"
-      />
-    );
-
-    expect(wrapper).toMatchSnapshot();
+    expect(
+      shallow(
+        <Content
+          title="Test title"
+          playerName="Test Player Name"
+          percentage="25%"
+          className="class-test"
+        />
+      )
+    ).toMatchSnapshot();
   });
 });

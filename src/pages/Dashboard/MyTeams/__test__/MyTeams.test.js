@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import MyTeams from '..';
 
-describe('Testing MyTeams component', () => {
+describe('<MyTeams />', () => {
   it('renders without crashing', () => {
     const wrapper = shallow(<MyTeams />);
 

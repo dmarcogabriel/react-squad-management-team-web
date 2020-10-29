@@ -13,8 +13,8 @@ const mockSquad = {
   ageAvg: 23,
 };
 
-describe('Player context', () => {
-  it('should add one player to players list', () => {
+describe('Squad context', () => {
+  it('should add one squad to squads list', () => {
     const wrapper = ({ children }) => <SquadProvider>{children}</SquadProvider>;
 
     const { result } = renderHook(() => useSquad(), { wrapper });

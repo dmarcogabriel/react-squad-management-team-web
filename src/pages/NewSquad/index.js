@@ -18,6 +18,7 @@ import DraggablePlayer from './DraggablePlayer';
 import { useSquad } from '../../contexts/Squad';
 import { usePlayers } from '../../contexts/Players';
 import Tags from './Tags';
+import { validateFormation } from '../../utils/validators';
 
 const NewSquad = ({ location, history }) => {
   const [formation, setFormation] = useState([]);
@@ -47,8 +48,9 @@ const NewSquad = ({ location, history }) => {
         type: string().required(),
       }),
     onSubmit: () => {
-      if (!formation.length) {
+      if (!validateFormation(formation)) {
         window.alert('Ops!', 'The squad needs a formation.');
+        return;
       }
 
       const ageAvg = lodash.mean(playersAges.filter((age) => age));
@@ -155,16 +157,25 @@ const NewSquad = ({ location, history }) => {
   };
 
   const setSquadFormation = (e) => {
-    setFormation(
-      e.split('-').map((rowNumber, i) => ({
-        id: String(i + 1),
-        rowNumber,
-        players: Array.from(Array(Number(rowNumber))).map((_, j) => ({
-          player: null,
-          position: `pl${i + 1 + (j + 1)}`,
-        })),
-      }))
-    );
+    const createdFormation = e.split('-').map((rowNumber, i) => ({
+      id: String(i + 1),
+      rowNumber,
+      players: Array.from(Array(Number(rowNumber))).map((_, j) => ({
+        player: null,
+        position: `pl${i + 1 + (j + 1)}`,
+      })),
+    }));
+
+    // Add goalkeeper
+    createdFormation.push({
+      id: String(createdFormation.length + 1),
+      rowNumber: 1,
+      players: [
+        { player: null, position: `pl${String(createdFormation.length + 1)}` },
+      ],
+    });
+
+    setFormation(createdFormation);
   };
 
   const handleChangeFormation = (e) => {

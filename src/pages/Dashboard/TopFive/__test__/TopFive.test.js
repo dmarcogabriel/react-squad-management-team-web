@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import TopFive from '..';
 
-describe('TopFive component tests', () => {
+describe('<TopFive />', () => {
   afterEach(cleanup);
 
   it('renders without crashing', () => {

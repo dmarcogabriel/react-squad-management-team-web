@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import TopAndLessPlayers from '..';
 
-describe('TopAndLessPlayers tests', () => {
+describe('<TopAndLessPlayers />', () => {
   afterEach(cleanup);
 
   it('renders without crashing', () => {

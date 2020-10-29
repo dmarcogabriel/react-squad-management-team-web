@@ -11,7 +11,7 @@ const Component = () => (
   </Router>
 );
 
-describe('Dashboard page tests', () => {
+describe('<Dashboard />', () => {
   afterEach(cleanup);
 
   it('renders Card without crashing', () => {

@@ -1,4 +1,4 @@
-import { render, cleanup } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
@@ -18,9 +18,7 @@ const mockOptions = [
   },
 ];
 
-describe('Select component tests', () => {
-  afterEach(cleanup);
-
+describe('<Select />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<Select />, div);
