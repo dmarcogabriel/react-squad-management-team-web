@@ -54,15 +54,15 @@ This project utilizes [AirBnb StyleGuide](https://github.com/airbnb/javascript/t
 
 This app is mobile first layout:
 
-![Alt Text](https://github.com/dmarcogabriel/venturus-squad-management-team/tree/master/assets/responsive.gif)
-![Alt Text](https://github.com/dmarcogabriel/venturus-squad-management-team/tree/master/assets/responsive-2.gif)
+![Responsive dashboard](https://github.com/dmarcogabriel/venturus-squad-management-team/blob/master/assets/responsive.gif?raw=true)
+![Responsive create squad](https://github.com/dmarcogabriel/venturus-squad-management-team/blob/master/assets/responsive-2.gif?raw=true)
 
 You can search for players and drag them to the position:
 
-![Alt Text](https://github.com/dmarcogabriel/venturus-squad-management-team/tree/master/assets/search-drag-drop.gif)
+![search and drag and drop](https://github.com/dmarcogabriel/venturus-squad-management-team/blob/master/assets/search-drag-drop.gif?raw=true)
 
 It brings to you some metrics:
 
-![Alt Text](https://github.com/dmarcogabriel/venturus-squad-management-team/tree/master/assets/screenshot.png)
+![metrics](https://github.com/dmarcogabriel/venturus-squad-management-team/blob/master/assets/screenshot.png?raw=true)
 
 
