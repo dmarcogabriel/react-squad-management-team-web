@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { useDrop } from 'react-dnd';
 import { showPlayerInitials } from '../../../utils/playersInitials';
 
-const Player = ({ className, player, onDropPlayer = () => {} }) => {
+const Player = ({ className, player, onDropPlayer }) => {
   const [{ isOver }, drop] = useDrop({
     accept: 'player',
     drop: (e) => onDropPlayer(e.id),

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Select component tests match snapshot 1`] = `
+exports[`<Select /> match snapshot 1`] = `
 <div
   className="relative w-40"
 >
@@ -22,10 +22,26 @@ exports[`Select component tests match snapshot 1`] = `
       <div
         className="border-l-2 border-gray-600 flex items-center justify-center px-1"
       >
-        <MdKeyboardArrowDown
+        <svg
           className="text-black"
+          fill="currentColor"
+          height={24}
           size={24}
-        />
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"
+          />
+        </svg>
       </div>
     </div>
   </button>

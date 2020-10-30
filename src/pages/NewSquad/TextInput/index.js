@@ -6,7 +6,7 @@ const TextInput = ({
   value,
   id,
   error,
-  onChange = () => {},
+  onChange,
   className = '',
   ...props
 }) => (

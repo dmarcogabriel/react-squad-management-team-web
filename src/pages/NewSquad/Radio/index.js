@@ -1,12 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-const Radio = ({
-  className = '',
-  label,
-  options = [],
-  onChange = () => {},
-}) => {
+const Radio = ({ className = '', label, options = [], onChange }) => {
   const isSelected = (selected) =>
     selected ? 'border-primary-dark' : 'border-gray-500';
 

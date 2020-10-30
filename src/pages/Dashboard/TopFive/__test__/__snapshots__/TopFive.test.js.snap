@@ -1,36 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TopFive component tests match snapshot 1`] = `
-<Card
-  title="Top 5"
+exports[`<TopFive /> match snapshot 1`] = `
+<div
+  className="bg-white rounded-lg shadow-lg my-10 w-full"
+  data-testid="card"
 >
   <div
-    className="flex flex-col md:flex-row mx-2"
+    className="flex p-8 justify-between items-center border-b-2 border-gray-200"
+  >
+    <h1
+      className="text-secondary-dark font-bold text-md"
+      data-testid="card-title"
+    >
+      Top 5
+    </h1>
+  </div>
+  <div
+    className="py-5 px-2"
+    data-testid="card-children"
   >
     <div
-      className="w-full mb-5 md:mr-8"
+      className="flex flex-col md:flex-row mx-2"
     >
-      <h2
-        className="text-base mb-3"
-      >
-        Highest avg age
-      </h2>
       <div
-        className="bg-background rounded-lg p-1"
-      />
-    </div>
-    <div
-      className="w-full"
-    >
-      <h2
-        className="text-base mb-3"
+        className="w-full mb-5 md:mr-8"
       >
-        Lowest avg age
-      </h2>
+        <h2
+          className="text-base mb-3"
+        >
+          Highest avg age
+        </h2>
+        <div
+          className="bg-background rounded-lg p-1"
+          data-testid="highest-avgs"
+        />
+      </div>
       <div
-        className="bg-background rounded-lg p-1"
-      />
+        className="w-full"
+      >
+        <h2
+          className="text-base mb-3"
+        >
+          Lowest avg age
+        </h2>
+        <div
+          className="bg-background rounded-lg p-1"
+          data-testid="lowest-avgs"
+        />
+      </div>
     </div>
   </div>
-</Card>
+</div>
 `;

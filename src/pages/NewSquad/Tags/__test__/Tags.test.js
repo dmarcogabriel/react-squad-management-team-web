@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
 import { render, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import renderer from 'react-test-renderer';
 import Tags from '..';
 
 const mockTags = ['test', 'test2', 'test3'];
@@ -53,20 +53,26 @@ describe('<Tags />', () => {
   });
 
   it('execute textarea create tag', () => {
-    const { getByTestId, rerender } = render(<Tags />);
+    const mock = {
+      onChange: (e) => e,
+    };
+    const spy = jest.spyOn(mock, 'onChange');
+
+    const { getByTestId, rerender } = render(<Tags onChange={spy} />);
 
     const textarea = getByTestId('textarea');
 
     fireEvent.change(textarea, { target: { value: 'Testing;' } });
 
-    rerender(<Tags />);
+    rerender(<Tags onChange={spy} />);
 
-    const createdTag = getByTestId('tag-button-Testing');
+    const createdTag = getByTestId('tags');
 
-    expect(createdTag).toBeInTheDocument();
+    expect(createdTag.childElementCount).toEqual(2);
+    expect(spy).toHaveBeenCalled();
   });
 
   it('match snapshot', () => {
-    expect(shallow(<Tags />)).toMatchSnapshot();
+    expect(renderer.create(<Tags />).toJSON()).toMatchSnapshot();
   });
 });

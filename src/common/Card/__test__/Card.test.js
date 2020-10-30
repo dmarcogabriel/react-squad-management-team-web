@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import Card from '..';
 
 describe('<Card />', () => {
@@ -37,8 +37,8 @@ describe('<Card />', () => {
   });
 
   it('matches snapshot', () => {
-    expect(
-      shallow(
+    const tree = renderer
+      .create(
         <Card
           title="This is a test"
           className="my-5"
@@ -48,6 +48,8 @@ describe('<Card />', () => {
           Children test
         </Card>
       )
-    ).toMatchSnapshot();
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
   });
 });

@@ -42,6 +42,7 @@ const MyTeams = ({ className }) => {
 
   return (
     <Card
+      dataTestid="container"
       className={className}
       title="My Teams"
       RightComponent={() => (
@@ -58,6 +59,7 @@ const MyTeams = ({ className }) => {
           <tr className="text-base flex">
             <th>
               <button
+                data-testid="order-by-name"
                 type="button"
                 onClick={() => handleOrderList('name')}
                 className="flex items-center mx-3 py-2 border-r-2 border-gray-200"
@@ -69,6 +71,7 @@ const MyTeams = ({ className }) => {
             </th>
             <th>
               <button
+                data-testid="order-by-description"
                 type="button"
                 onClick={() => handleOrderList('description')}
                 className="flex items-center w-full mx-3 py-2"
@@ -81,9 +84,12 @@ const MyTeams = ({ className }) => {
           </tr>
         </thead>
 
-        <tbody>
-          {myTeams.map((squad) => (
+        <tbody data-testid="squad-list">
+          {myTeams.map((squad, i) => (
             <SquadItem
+              dataTestid={`squad-${i}`}
+              squadSelectButtonTestid={`squad-select-${i}`}
+              squadDeleteButtonTestid={`squad-delete-${i}`}
               key={squad.id}
               squad={squad}
               onClick={handleSelect}

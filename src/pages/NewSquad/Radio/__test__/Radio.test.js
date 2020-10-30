@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
 import { render } from '@testing-library/react';
 import userEv from '@testing-library/user-event';
+import renderer from 'react-test-renderer';
 import Radio from '..';
 
 const mockOptions = [
@@ -83,6 +83,6 @@ describe('<Radio />', () => {
   });
 
   it('match snapshot', () => {
-    expect(shallow(<Radio />)).toMatchSnapshot();
+    expect(renderer.create(<Radio />).toJSON()).toMatchSnapshot();
   });
 });

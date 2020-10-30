@@ -1,52 +1,138 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing MyTeams component match snapshot 1`] = `
-<Card
-  RightComponent={[Function]}
-  title="My Teams"
+exports[`<MyTeams /> match snapshot 1`] = `
+<div
+  className="bg-white rounded-lg shadow-lg my-10 w-full"
+  data-testid="container"
 >
-  <table
-    className="w-full"
+  <div
+    className="flex p-8 justify-between items-center border-b-2 border-gray-200"
   >
-    <thead>
-      <tr
-        className="text-base flex"
+    <h1
+      className="text-secondary-dark font-bold text-md"
+      data-testid="card-title"
+    >
+      My Teams
+    </h1>
+    <a
+      className="bg-gradient-to-t from-secondary-dark to-secondary-light text-white p-1 rounded-lg"
+      href="/create"
+      onClick={[Function]}
+    >
+      <svg
+        fill="currentColor"
+        height={22}
+        size={22}
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width={22}
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <th>
-          <button
-            className="flex items-center mx-3 py-2 border-r-2 border-gray-200"
-            onClick={[Function]}
-            type="button"
-          >
-            <p
-              className="font-normal mr-5"
+        <path
+          d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+        />
+      </svg>
+    </a>
+  </div>
+  <div
+    className="py-5 px-2"
+    data-testid="card-children"
+  >
+    <table
+      className="w-full"
+    >
+      <thead>
+        <tr
+          className="text-base flex"
+        >
+          <th>
+            <button
+              className="flex items-center mx-3 py-2 border-r-2 border-gray-200"
+              data-testid="order-by-name"
+              onClick={[Function]}
+              type="button"
             >
-              Name
-            </p>
-            <CgArrowsV
-              className="mx-2"
-            />
-          </button>
-        </th>
-        <th>
-          <button
-            className="flex items-center w-full mx-3 py-2"
-            onClick={[Function]}
-            type="button"
-          >
-            <p
-              className="font-normal mr-5"
+              <p
+                className="font-normal mr-5"
+              >
+                Name
+              </p>
+              <svg
+                className="mx-2"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.75739 5.04077L9.1716 6.45498L11.0001 4.62652V10H13.0001V4.62661L14.8284 6.45498L16.2426 5.04077L12 0.798126L7.75739 5.04077Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M16.2426 18.9593L14.8284 17.545L13.0001 19.3734V14H11.0001V19.3735L9.1716 17.545L7.75739 18.9593L12 23.2019L16.2426 18.9593Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+          </th>
+          <th>
+            <button
+              className="flex items-center w-full mx-3 py-2"
+              data-testid="order-by-description"
+              onClick={[Function]}
+              type="button"
             >
-              Description
-            </p>
-            <CgArrowsV
-              className="mx-2"
-            />
-          </button>
-        </th>
-      </tr>
-    </thead>
-    <tbody />
-  </table>
-</Card>
+              <p
+                className="font-normal mr-5"
+              >
+                Description
+              </p>
+              <svg
+                className="mx-2"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.75739 5.04077L9.1716 6.45498L11.0001 4.62652V10H13.0001V4.62661L14.8284 6.45498L16.2426 5.04077L12 0.798126L7.75739 5.04077Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M16.2426 18.9593L14.8284 17.545L13.0001 19.3734V14H11.0001V19.3735L9.1716 17.545L7.75739 18.9593L12 23.2019L16.2426 18.9593Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        data-testid="squad-list"
+      />
+    </table>
+  </div>
+</div>
 `;

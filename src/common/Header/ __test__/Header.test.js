@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import Header from '..';
 
 describe('<Header />', () => {
@@ -19,6 +19,6 @@ describe('<Header />', () => {
   });
 
   it('matches snapshot', () => {
-    expect(shallow(<Header />)).toMatchSnapshot();
+    expect(renderer.create(<Header />).toJSON()).toMatchSnapshot();
   });
 });

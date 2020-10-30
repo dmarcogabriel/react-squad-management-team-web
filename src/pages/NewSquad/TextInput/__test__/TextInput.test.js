@@ -1,8 +1,7 @@
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
-import userEv from '@testing-library/user-event';
+import renderer from 'react-test-renderer';
 import TextInput from '..';
 
 describe('<TextInput />', () => {
@@ -38,19 +37,22 @@ describe('<TextInput />', () => {
   });
 
   it('execute onChange event', () => {
-    let result;
-    const onChange = (e) => {
-      result = e;
+    const mock = {
+      onChange: () => ({ target: { value: 'Testing' } }),
     };
+    const spy = jest.spyOn(mock, 'onChange');
+    const result = mock.onChange();
 
-    const { getByTestId } = render(<TextInput onChange={onChange} />);
+    const { getByTestId } = render(<TextInput onChange={spy} />);
 
-    userEv.type(getByTestId('input'), 'Testing');
+    const input = getByTestId('input');
+    fireEvent.change(input, { target: { value: 'Testing' } });
 
-    expect(result).toEqual('Testing');
+    expect(spy).toHaveBeenCalled();
+    expect(result.target.value).toEqual('Testing');
   });
 
   it('match snapshot', () => {
-    expect(shallow(<TextInput />)).toMatchSnapshot();
+    expect(renderer.create(<TextInput />).toJSON()).toMatchSnapshot();
   });
 });

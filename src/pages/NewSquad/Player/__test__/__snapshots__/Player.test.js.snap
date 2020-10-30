@@ -1,11 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Player /> match snapshot 1`] = `
-<DndProvider
-  backend={[Function]}
+<div
+  className="relative rounded-full border-dashed p-8 bg-white inline-block text-white bg-opacity-50 text-white border-2"
+  data-testid="drop-player"
 >
-  <Player
-    player={Object {}}
-  />
-</DndProvider>
+  <div
+    className="absolute top-0 left-0 flex items-center justify-center w-full h-full"
+  >
+    <svg
+      fill="currentColor"
+      height={22}
+      size={22}
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width={22}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </div>
+</div>
 `;

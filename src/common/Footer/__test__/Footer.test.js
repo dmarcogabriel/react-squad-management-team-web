@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import Footer from '..';
 
 describe('<Footer />', () => {
@@ -27,6 +27,6 @@ describe('<Footer />', () => {
   });
 
   it('matches snapshot', () => {
-    expect(shallow(<Footer />)).toMatchSnapshot();
+    expect(renderer.create(<Footer />).toJSON()).toMatchSnapshot();
   });
 });

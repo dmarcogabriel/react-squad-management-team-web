@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
 import userEvent from '@testing-library/user-event';
+import renderer from 'react-test-renderer';
 import Select from '..';
 
 const mockOptions = [
@@ -92,6 +92,8 @@ describe('<Select />', () => {
   });
 
   it('match snapshot', () => {
-    expect(shallow(<Select options={mockOptions} />)).toMatchSnapshot();
+    expect(
+      renderer.create(<Select options={mockOptions} />).toJSON()
+    ).toMatchSnapshot();
   });
 });

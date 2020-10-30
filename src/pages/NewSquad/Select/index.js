@@ -3,7 +3,7 @@ import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
 
 const ICON_SIZE = 24;
 
-const Select = ({ value, options = [], id, onChange = () => {} }) => {
+const Select = ({ value, options = [], id, onChange }) => {
   const [showOptions, setShowOptions] = useState(false);
   const [defaultValue, setDefaultValue] = useState('Chose one...');
   const [optionsList, setOptionsList] = useState(options);

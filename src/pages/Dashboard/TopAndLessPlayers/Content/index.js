@@ -3,8 +3,11 @@ import cn from 'classnames';
 import { showPlayerInitials } from '../../../../utils/playersInitials';
 import PlayerAvatarPlaceholder from '../../../../assets/playerAvatarPlaceholder.png';
 
-const Content = ({ playerName, title, percentage, className }) => (
-  <div data-testid="className" className={cn('w-full p-5', className)}>
+const Content = ({ playerName, title, percentage, className, dataTestid }) => (
+  <div
+    data-testid={dataTestid || 'className'}
+    className={cn('w-full p-5', className)}
+  >
     <h2 data-testid="title" className="font-bold text-lg text-center">
       {title}
     </h2>

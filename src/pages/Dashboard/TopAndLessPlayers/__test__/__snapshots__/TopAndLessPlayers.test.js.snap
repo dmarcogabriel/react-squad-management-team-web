@@ -1,19 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TopAndLessPlayers tests matches snapshot 1`] = `
+exports[`<TopAndLessPlayers /> matches snapshot 1`] = `
 <div
   className="rounded-lg flex flex-col md:flex-row shadow-lg bg-gradient-to-t from-secondary-dark to-secondary-light text-white mb-5"
 >
-  <Content
-    className="border-b-2 md:border-r-2 md:border-b-0 border-opacity-25 border-white"
-    percentage="0%"
-    playerName={null}
-    title="Most picked player"
-  />
-  <Content
-    percentage="0%"
-    playerName={null}
-    title="Less picked player"
-  />
+  <div
+    className="w-full p-5 border-b-2 md:border-r-2 md:border-b-0 border-opacity-25 border-white"
+    data-testid="most-picked"
+  >
+    <h2
+      className="font-bold text-lg text-center"
+      data-testid="title"
+    >
+      Most picked player
+    </h2>
+    <div
+      className="relative flex justify-center my-3"
+    >
+      <div
+        className="relative p-12 border-dashed border-2 text-primary-dark rounded-full overflow-hidden"
+      >
+        <img
+          alt="Player Avatar"
+          className="absolute right-0 top-0 w-full h-full"
+          src="playerAvatarPlaceholder.png"
+        />
+      </div>
+      <p
+        className="absolute right-0 top-0 text-base border-b-2 border-white pr-5"
+        data-testid="percentage"
+      >
+        0%
+      </p>
+    </div>
+  </div>
+  <div
+    className="w-full p-5"
+    data-testid="less-picked"
+  >
+    <h2
+      className="font-bold text-lg text-center"
+      data-testid="title"
+    >
+      Less picked player
+    </h2>
+    <div
+      className="relative flex justify-center my-3"
+    >
+      <div
+        className="relative p-12 border-dashed border-2 text-primary-dark rounded-full overflow-hidden"
+      >
+        <img
+          alt="Player Avatar"
+          className="absolute right-0 top-0 w-full h-full"
+          src="playerAvatarPlaceholder.png"
+        />
+      </div>
+      <p
+        className="absolute right-0 top-0 text-base border-b-2 border-white pr-5"
+        data-testid="percentage"
+      >
+        0%
+      </p>
+    </div>
+  </div>
 </div>
 `;

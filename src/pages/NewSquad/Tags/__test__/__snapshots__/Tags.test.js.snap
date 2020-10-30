@@ -23,7 +23,9 @@ exports[`<Tags /> match snapshot 1`] = `
         <p
           className="inline text-base"
           data-testid="value"
-        />
+        >
+          
+        </p>
       </div>
       <textarea
         className="opacity-0 resize-none absolute z-0"

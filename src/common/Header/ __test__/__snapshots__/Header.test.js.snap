@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`matches snapshot 1`] = `
+exports[`<Header /> matches snapshot 1`] = `
 <nav
   className="flex px-8 py-2 items-center justify-between bg-gradient-to-r from-primary-dark to-secondary-dark text-white"
   data-testid="header"

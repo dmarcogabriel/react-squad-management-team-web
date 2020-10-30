@@ -7,9 +7,10 @@ const Card = ({
   children,
   className = '',
   childrenClassName = '',
+  dataTestid,
 }) => (
   <div
-    data-testid="card"
+    data-testid={dataTestid || 'card'}
     className={cn('bg-white rounded-lg shadow-lg my-10 w-full', className)}
   >
     <div className="flex p-8 justify-between items-center border-b-2 border-gray-200">

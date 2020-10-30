@@ -258,4 +258,10 @@ describe('validators util tests', () => {
 
     expect(result).toEqual(true);
   });
+
+  it('should return false for not passing any params', () => {
+    const result = validateFormation();
+
+    expect(result).toEqual(false);
+  });
 });

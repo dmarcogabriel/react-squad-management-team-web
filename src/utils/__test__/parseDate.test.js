@@ -6,4 +6,10 @@ describe('parseDate util test', () => {
 
     expect(date).toEqual('2003-12-30');
   });
+
+  it('should return null', () => {
+    const date = parseDate();
+
+    expect(date).toEqual(null);
+  });
 });

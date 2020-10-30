@@ -1,7 +1,7 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import ReactDOM from 'react-dom';
 import { render, cleanup } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 import Content from '..';
 
 describe('<Content />', () => {
@@ -47,14 +47,16 @@ describe('<Content />', () => {
 
   it('match snapshot', () => {
     expect(
-      shallow(
-        <Content
-          title="Test title"
-          playerName="Test Player Name"
-          percentage="25%"
-          className="class-test"
-        />
-      )
+      renderer
+        .create(
+          <Content
+            title="Test title"
+            playerName="Test Player Name"
+            percentage="25%"
+            className="class-test"
+          />
+        )
+        .toJSON()
     ).toMatchSnapshot();
   });
 });

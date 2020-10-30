@@ -1,8 +1,8 @@
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
+import renderer from 'react-test-renderer';
 import SquadItem from '..';
 
 const mockSquadSelected = {
@@ -55,30 +55,41 @@ describe('<SquadItem />', () => {
       result = selectedSquad;
     };
 
-    const wrapper = shallow(
-      <SquadItem onClick={mockFunction} squad={mockSquadNotSelected} />
+    const { getByTestId } = render(
+      <Component onClick={mockFunction} squad={mockSquadNotSelected} />
     );
 
-    wrapper.find({ 'data-testid': 'squadItem' }).simulate('click');
+    const squadItem = getByTestId('squadItem');
+    fireEvent.click(squadItem);
+
     expect(result).toEqual(mockSquadNotSelected);
   });
 
   it('execute onDelete event', () => {
-    let result;
-
-    const mockFunction = (squadId) => {
-      result = squadId;
+    const mock = {
+      onDelete: (squadId) => squadId,
+      onClick: () => {},
     };
+    const spyDelete = jest.spyOn(mock, 'onDelete');
+    const spySelect = jest.spyOn(mock, 'onClick');
 
-    const wrapper = shallow(
-      <SquadItem onDelete={mockFunction} squad={mockSquadSelected} />
+    const { getByTestId } = render(
+      <Component
+        onDelete={spyDelete}
+        onClick={spySelect}
+        squad={mockSquadSelected}
+      />
     );
 
-    wrapper.find({ 'data-testid': 'squadItem-delete' }).simulate('click');
-    expect(result).toEqual(mockSquadSelected.id);
+    const squadItemDeleteButton = getByTestId('squadItem-delete');
+    fireEvent.click(squadItemDeleteButton);
+
+    expect(spyDelete).toHaveBeenCalled();
   });
 
   it('matches snapshot', () => {
-    expect(shallow(<SquadItem squad={mockSquadSelected} />)).toMatchSnapshot();
+    expect(
+      renderer.create(<Component squad={mockSquadSelected} />).toJSON()
+    ).toMatchSnapshot();
   });
 });

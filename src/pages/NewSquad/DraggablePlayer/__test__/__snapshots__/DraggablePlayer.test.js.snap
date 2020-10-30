@@ -1,18 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<DraggablePlayer /> match snapshot 1`] = `
-<DndProvider
-  backend={[Function]}
+<div
+  className="bg-gradient-to-t from-gray-400 to-white border-dashed border-2 rounded-sm p-3 my-2 cursor-move"
 >
-  <DraggablePlayer
-    player={
-      Object {
-        "age": 24,
-        "fullname": "Mock Player",
-        "nationality": "Mockland",
-        "player_id": "m1",
-      }
-    }
-  />
-</DndProvider>
+  <div
+    className="flex flex-col md:flex-row justify-between"
+  >
+    <p
+      className="text-base font-bold"
+    >
+      Name:
+      <span
+        className="text-primary-dark"
+      >
+         Mock Player
+      </span>
+    </p>
+    <p
+      className="text-base font-bold"
+    >
+      Age:
+      <span
+        className="text-primary-dark"
+      >
+         24
+      </span>
+    </p>
+  </div>
+  <p
+    className="text-base font-bold"
+  >
+    Nacionality:
+    <span
+      className="text-primary-dark"
+    >
+       Mockland
+    </span>
+  </p>
+</div>
 `;

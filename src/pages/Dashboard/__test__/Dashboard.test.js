@@ -1,8 +1,8 @@
 import { cleanup } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
+import renderer from 'react-test-renderer';
 import Dashboard from '..';
 
 const Component = () => (
@@ -20,6 +20,6 @@ describe('<Dashboard />', () => {
   });
 
   it('match snapshot', () => {
-    expect(shallow(<Component />)).toMatchSnapshot();
+    expect(renderer.create(<Component />).toJSON()).toMatchSnapshot();
   });
 });

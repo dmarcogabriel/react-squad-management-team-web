@@ -1,7 +1,300 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dashboard page tests match snapshot 1`] = `
-<BrowserRouter>
-  <Dashboard />
-</BrowserRouter>
+exports[`<Dashboard /> match snapshot 1`] = `
+Array [
+  <nav
+    className="flex px-8 py-2 items-center justify-between bg-gradient-to-r from-primary-dark to-secondary-dark text-white"
+    data-testid="header"
+  >
+    <div>
+      <p
+        className="text-lg"
+      >
+        Squad Management Tool
+      </p>
+    </div>
+    <div
+      className="flex items-center"
+    >
+      <p
+        className="text-sm mr-2 invisible md:visible"
+      >
+        John Doe
+      </p>
+      <p
+        className="bg-white py-2 px-3 rounded-full text-black"
+      >
+        JD
+      </p>
+    </div>
+  </nav>,
+  <div
+    className="flex flex-col md:flex-row bg-background justify-center w-full px-5 md:px-10"
+    data-testid="page"
+  >
+    <div
+      className="bg-white rounded-lg shadow-lg my-10 w-full md:mr-10"
+      data-testid="container"
+    >
+      <div
+        className="flex p-8 justify-between items-center border-b-2 border-gray-200"
+      >
+        <h1
+          className="text-secondary-dark font-bold text-md"
+          data-testid="card-title"
+        >
+          My Teams
+        </h1>
+        <a
+          className="bg-gradient-to-t from-secondary-dark to-secondary-light text-white p-1 rounded-lg"
+          href="/create"
+          onClick={[Function]}
+        >
+          <svg
+            fill="currentColor"
+            height={22}
+            size={22}
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width={22}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+            />
+          </svg>
+        </a>
+      </div>
+      <div
+        className="py-5 px-2"
+        data-testid="card-children"
+      >
+        <table
+          className="w-full"
+        >
+          <thead>
+            <tr
+              className="text-base flex"
+            >
+              <th>
+                <button
+                  className="flex items-center mx-3 py-2 border-r-2 border-gray-200"
+                  data-testid="order-by-name"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <p
+                    className="font-normal mr-5"
+                  >
+                    Name
+                  </p>
+                  <svg
+                    className="mx-2"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    strokeWidth="0"
+                    style={
+                      Object {
+                        "color": undefined,
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.75739 5.04077L9.1716 6.45498L11.0001 4.62652V10H13.0001V4.62661L14.8284 6.45498L16.2426 5.04077L12 0.798126L7.75739 5.04077Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M16.2426 18.9593L14.8284 17.545L13.0001 19.3734V14H11.0001V19.3735L9.1716 17.545L7.75739 18.9593L12 23.2019L16.2426 18.9593Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </th>
+              <th>
+                <button
+                  className="flex items-center w-full mx-3 py-2"
+                  data-testid="order-by-description"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <p
+                    className="font-normal mr-5"
+                  >
+                    Description
+                  </p>
+                  <svg
+                    className="mx-2"
+                    fill="none"
+                    height="1em"
+                    stroke="currentColor"
+                    strokeWidth="0"
+                    style={
+                      Object {
+                        "color": undefined,
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.75739 5.04077L9.1716 6.45498L11.0001 4.62652V10H13.0001V4.62661L14.8284 6.45498L16.2426 5.04077L12 0.798126L7.75739 5.04077Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M16.2426 18.9593L14.8284 17.545L13.0001 19.3734V14H11.0001V19.3735L9.1716 17.545L7.75739 18.9593L12 23.2019L16.2426 18.9593Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            data-testid="squad-list"
+          />
+        </table>
+      </div>
+    </div>
+    <div
+      className="flex flex-col w-full"
+    >
+      <div
+        className="bg-white rounded-lg shadow-lg my-10 w-full"
+        data-testid="card"
+      >
+        <div
+          className="flex p-8 justify-between items-center border-b-2 border-gray-200"
+        >
+          <h1
+            className="text-secondary-dark font-bold text-md"
+            data-testid="card-title"
+          >
+            Top 5
+          </h1>
+        </div>
+        <div
+          className="py-5 px-2"
+          data-testid="card-children"
+        >
+          <div
+            className="flex flex-col md:flex-row mx-2"
+          >
+            <div
+              className="w-full mb-5 md:mr-8"
+            >
+              <h2
+                className="text-base mb-3"
+              >
+                Highest avg age
+              </h2>
+              <div
+                className="bg-background rounded-lg p-1"
+                data-testid="highest-avgs"
+              />
+            </div>
+            <div
+              className="w-full"
+            >
+              <h2
+                className="text-base mb-3"
+              >
+                Lowest avg age
+              </h2>
+              <div
+                className="bg-background rounded-lg p-1"
+                data-testid="lowest-avgs"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="rounded-lg flex flex-col md:flex-row shadow-lg bg-gradient-to-t from-secondary-dark to-secondary-light text-white mb-5"
+      >
+        <div
+          className="w-full p-5 border-b-2 md:border-r-2 md:border-b-0 border-opacity-25 border-white"
+          data-testid="most-picked"
+        >
+          <h2
+            className="font-bold text-lg text-center"
+            data-testid="title"
+          >
+            Most picked player
+          </h2>
+          <div
+            className="relative flex justify-center my-3"
+          >
+            <div
+              className="relative p-12 border-dashed border-2 text-primary-dark rounded-full overflow-hidden"
+            >
+              <img
+                alt="Player Avatar"
+                className="absolute right-0 top-0 w-full h-full"
+                src="playerAvatarPlaceholder.png"
+              />
+            </div>
+            <p
+              className="absolute right-0 top-0 text-base border-b-2 border-white pr-5"
+              data-testid="percentage"
+            >
+              0%
+            </p>
+          </div>
+        </div>
+        <div
+          className="w-full p-5"
+          data-testid="less-picked"
+        >
+          <h2
+            className="font-bold text-lg text-center"
+            data-testid="title"
+          >
+            Less picked player
+          </h2>
+          <div
+            className="relative flex justify-center my-3"
+          >
+            <div
+              className="relative p-12 border-dashed border-2 text-primary-dark rounded-full overflow-hidden"
+            >
+              <img
+                alt="Player Avatar"
+                className="absolute right-0 top-0 w-full h-full"
+                src="playerAvatarPlaceholder.png"
+              />
+            </div>
+            <p
+              className="absolute right-0 top-0 text-base border-b-2 border-white pr-5"
+              data-testid="percentage"
+            >
+              0%
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="bg-footer py-3 flex justify-center"
+    data-testid="footer"
+  >
+    <p
+      className="text-sm text-gray-900"
+      data-testid="footer-text"
+    >
+      2020 - All rights reserved
+    </p>
+  </div>,
+]
 `;

@@ -4,11 +4,18 @@ import { FaTrashAlt } from 'react-icons/fa';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
 
-const SquadItem = ({ squad, onClick = () => {}, onDelete = () => {} }) => (
+const SquadItem = ({
+  squad,
+  onClick,
+  onDelete,
+  dataTestid,
+  squadSelectButtonTestid,
+  squadDeleteButtonTestid,
+}) => (
   <tr>
     <td>
       <button
-        data-testid="squadItem"
+        data-testid={squadSelectButtonTestid || 'squadItem'}
         type="button"
         onClick={() => onClick(squad)}
         className={cn(
@@ -16,7 +23,9 @@ const SquadItem = ({ squad, onClick = () => {}, onDelete = () => {} }) => (
           squad.selected && 'text-primary-dark bg-primary-light'
         )}
       >
-        <p className="inline mr-10">{squad.name}</p>
+        <p data-testid={dataTestid} className="inline mr-10">
+          {squad.name}
+        </p>
 
         <p className="inline ml-2">{squad.description.substring(0, 20)}</p>
 
@@ -29,7 +38,7 @@ const SquadItem = ({ squad, onClick = () => {}, onDelete = () => {} }) => (
           )}
         >
           <button
-            data-testid="squadItem-delete"
+            data-testid={squadDeleteButtonTestid || 'squadItem-delete'}
             type="button"
             onClick={() => onDelete(squad.id)}
           >

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Content tests match snapshot 1`] = `
+exports[`<Content /> match snapshot 1`] = `
 <div
   className="w-full p-5 class-test"
   data-testid="className"

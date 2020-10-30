@@ -1,7 +1,7 @@
 import React, { useState, createRef, useEffect } from 'react';
 import { MdClose } from 'react-icons/md';
 
-const Tags = ({ defaultTags, onChange = () => {}, className }) => {
+const Tags = ({ defaultTags, onChange, className }) => {
   const [tags, setTags] = useState([]);
   const [text, setText] = useState('');
 

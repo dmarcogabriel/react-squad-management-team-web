@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import renderer from 'react-test-renderer';
 import DraggablePlayer from '..';
 
 const mockPlayer = {
@@ -26,6 +26,8 @@ describe('<DraggablePlayer />', () => {
   });
 
   it('match snapshot', () => {
-    expect(shallow(<Component player={mockPlayer} />)).toMatchSnapshot();
+    expect(
+      renderer.create(<Component player={mockPlayer} />).toJSON()
+    ).toMatchSnapshot();
   });
 });

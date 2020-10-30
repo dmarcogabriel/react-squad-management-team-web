@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import Page from '..';
 
 describe('<Page />', () => {
@@ -20,13 +20,15 @@ describe('<Page />', () => {
 
   it('matches snapshot', () => {
     expect(
-      shallow(
-        <Page>
-          <div>
-            <h1>This is a header 1 from Page</h1>
-          </div>
-        </Page>
-      )
+      renderer
+        .create(
+          <Page>
+            <div>
+              <h1>This is a header 1 from Page</h1>
+            </div>
+          </Page>
+        )
+        .toJSON()
     ).toMatchSnapshot();
   });
 });
