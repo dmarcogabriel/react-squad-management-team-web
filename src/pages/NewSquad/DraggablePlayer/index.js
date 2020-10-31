@@ -14,7 +14,8 @@ const DraggablePlayer = ({ player }) => {
     <div
       ref={drag}
       className={cn(
-        'bg-gradient-to-t from-gray-400 to-white border-dashed border-2 rounded-sm p-3 my-2 cursor-move',
+        'bg-gradient-to-t from-gray-400 to-white',
+        'border-dashed border-2 rounded-sm p-3 my-2 cursor-move',
         isDragging && 'opacity-50'
       )}
     >

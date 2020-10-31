@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import cn from 'classnames';
 import Card from '../../../common/Card';
 import { useSquad } from '../../../contexts/Squad';
 
@@ -39,7 +40,10 @@ const TopFive = () => {
             {highestAvgAge.map((squad) => (
               <div
                 key={squad.id}
-                className="flex items-center justify-between px-4 py-2 my-1 bg-white rounded-lg"
+                className={cn(
+                  'flex items-center justify-between',
+                  'px-4 py-2 my-1 bg-white rounded-lg'
+                )}
               >
                 <p data-testid={`highest-${squad.id}-name`} className="text-sm">
                   {squad.name}
@@ -60,7 +64,10 @@ const TopFive = () => {
             {lowestAvgAge.map((squad) => (
               <div
                 key={squad.id}
-                className="flex items-center justify-between px-4 py-2 my-1 bg-white rounded-lg"
+                className={cn(
+                  'flex items-center justify-between',
+                  'px-4 py-2 my-1 bg-white rounded-lg'
+                )}
               >
                 <p data-testid={`lowest-${squad.id}-name`} className="text-sm">
                   {squad.name}

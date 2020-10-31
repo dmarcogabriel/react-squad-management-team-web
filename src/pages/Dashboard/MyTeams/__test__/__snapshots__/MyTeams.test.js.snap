@@ -6,7 +6,7 @@ exports[`<MyTeams /> match snapshot 1`] = `
   data-testid="container"
 >
   <div
-    className="flex p-8 justify-between items-center border-b-2 border-gray-200"
+    className="flex justify-between items-center p-8 border-b-2 border-gray-200"
   >
     <h1
       className="text-secondary-dark font-bold text-md"
@@ -15,7 +15,7 @@ exports[`<MyTeams /> match snapshot 1`] = `
       My Teams
     </h1>
     <a
-      className="bg-gradient-to-t from-secondary-dark to-secondary-light text-white p-1 rounded-lg"
+      className="bg-gradient-to-t from-secondary-dark  to-secondary-light text-white p-1 rounded-lg"
       href="/create"
       onClick={[Function]}
     >
@@ -53,7 +53,7 @@ exports[`<MyTeams /> match snapshot 1`] = `
         >
           <th>
             <button
-              className="flex items-center mx-3 py-2 border-r-2 border-gray-200"
+              className="flex items-center mx-3 py-2 border-r-2 border-gray-100"
               data-testid="order-by-name"
               onClick={[Function]}
               type="button"

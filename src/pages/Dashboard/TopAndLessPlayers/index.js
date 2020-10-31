@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import lodash from 'lodash';
+import cn from 'classnames';
 import { usePlayers } from '../../../contexts/Players';
 import Content from './Content';
 
@@ -40,10 +41,19 @@ const TopAndLessPlayers = () => {
   }, []);
 
   return (
-    <div className="rounded-lg flex flex-col md:flex-row shadow-lg bg-gradient-to-t from-secondary-dark to-secondary-light text-white mb-5">
+    <div
+      className={cn(
+        'flex flex-col md:flex-row shadow-lg rounded-lg',
+        'bg-gradient-to-t from-secondary-dark to-secondary-light',
+        'text-white mb-5'
+      )}
+    >
       <Content
         dataTestid="most-picked"
-        className="border-b-2 md:border-r-2 md:border-b-0 border-opacity-25 border-white"
+        className={cn(
+          'border-b-2 md:border-r-2',
+          'md:border-b-0 border-opacity-25 border-white'
+        )}
         playerName={mostPickedPlayer && mostPickedPlayer.display_name}
         percentage={`${mostPickedPercentage.toFixed()}%`}
         title="Most picked player"

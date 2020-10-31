@@ -3,7 +3,7 @@
 exports[`<NewSquad /> should matches snapshot 1`] = `
 Array [
   <nav
-    className="flex px-8 py-2 items-center justify-between bg-gradient-to-r from-primary-dark to-secondary-dark text-white"
+    className="flex items-center justify-between px-8 py-2 text-white bg-gradient-to-r from-primary-dark to-secondary-dark"
     data-testid="header"
   >
     <div>
@@ -29,7 +29,7 @@ Array [
     </div>
   </nav>,
   <div
-    className="flex flex-col md:flex-row bg-background justify-center w-full px-5 md:px-10"
+    className="flex flex-col md:flex-row justify-center bg-background w-full px-5 md:px-10"
     data-testid="page"
   >
     <div
@@ -37,7 +37,7 @@ Array [
       data-testid="card"
     >
       <div
-        className="flex p-8 justify-between items-center border-b-2 border-gray-200"
+        className="flex justify-between items-center p-8 border-b-2 border-gray-200"
       >
         <h1
           className="text-secondary-dark font-bold text-md"
@@ -70,13 +70,13 @@ Array [
                 >
                   <p
                     className="font-bold text-base"
-                    data-testid="label"
+                    data-testid="name-label"
                   >
                     Team Name
                   </p>
                   <input
                     className="border-2 w-full rounded p-1 focus:border-gray-500 my-3"
-                    data-testid="input"
+                    data-testid="name-input"
                     id="teamName"
                     onChange={[Function]}
                     value=""
@@ -116,13 +116,13 @@ Array [
                 >
                   <p
                     className="font-bold text-base"
-                    data-testid="label"
+                    data-testid="website-label"
                   >
                     Team website
                   </p>
                   <input
                     className="border-2 w-full rounded p-1 focus:border-gray-500 my-3"
-                    data-testid="input"
+                    data-testid="website-input"
                     id="teamWebSite"
                     onChange={[Function]}
                     placeholder="https://myteam.com"
@@ -189,11 +189,13 @@ Array [
                   >
                     Tags
                   </p>
-                  <button
+                  <div
                     className="flex rounded border-2 border-gray-400 my-3 py-2 w-full min-height-3 z-10"
                     data-testid="button-field"
                     onClick={[Function]}
-                    type="button"
+                    onKeyDown={[Function]}
+                    role="button"
+                    tabIndex={0}
                   >
                     <div
                       className="flex flex-wrap relative"
@@ -213,7 +215,7 @@ Array [
                       onChange={[Function]}
                       value=""
                     />
-                  </button>
+                  </div>
                 </label>
               </div>
             </div>
@@ -296,6 +298,7 @@ Array [
               </div>
               <button
                 className="bg-gradient-to-t from-secondary-dark to-secondary-light w-full text-white text-base font-bold rounded-sm py-2 mb-5"
+                data-testid="submit-button"
                 onClick={[Function]}
                 type="button"
               >
@@ -326,7 +329,9 @@ Array [
                   />
                 </label>
               </div>
-              <div />
+              <div
+                data-testid="players-list"
+              />
             </div>
           </div>
         </div>

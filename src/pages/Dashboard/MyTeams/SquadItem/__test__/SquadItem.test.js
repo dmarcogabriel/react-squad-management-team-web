@@ -21,7 +21,11 @@ const mockSquadNotSelected = {
 
 const Component = (props) => (
   <Router>
-    <SquadItem {...props} />
+    <table>
+      <tbody>
+        <SquadItem {...props} />
+      </tbody>
+    </table>
   </Router>
 );
 

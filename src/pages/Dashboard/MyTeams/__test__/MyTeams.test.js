@@ -96,14 +96,6 @@ describe('<MyTeams />', () => {
   });
 
   // todo: test onDelete function
-  // it('executes onDelete function', () => {
-  //   const { getByTestId } = render(<Component />);
-
-  //   fireEvent.click(getByTestId('squad-select-0'));
-  //   fireEvent.click(getByTestId('squad-delete-0'));
-
-  //   expect(getByTestId('squad-list').childElementCount).toEqual(3);
-  // });
 
   it('match snapshot', () => {
     expect(renderer.create(<Component />).toJSON()).toMatchSnapshot();

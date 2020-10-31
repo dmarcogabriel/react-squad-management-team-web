@@ -10,11 +10,13 @@ exports[`<Tags /> match snapshot 1`] = `
     >
       Tags
     </p>
-    <button
+    <div
       className="flex rounded border-2 border-gray-400 my-3 py-2 w-full min-height-3 z-10"
       data-testid="button-field"
       onClick={[Function]}
-      type="button"
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={0}
     >
       <div
         className="flex flex-wrap relative"
@@ -34,7 +36,7 @@ exports[`<Tags /> match snapshot 1`] = `
         onChange={[Function]}
         value=""
       />
-    </button>
+    </div>
   </label>
 </div>
 `;

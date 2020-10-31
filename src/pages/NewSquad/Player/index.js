@@ -23,13 +23,19 @@ const Player = ({ className, player, onDropPlayer }) => {
       data-testid="drop-player"
       ref={drop}
       className={cn(
-        'relative rounded-full border-dashed p-8 bg-white inline-block text-white',
+        'relative rounded-full border-dashed p-8',
+        'bg-white inline-block text-white',
         isOver && 'bg-opacity-100',
         hasPlayer(),
         className
       )}
     >
-      <div className="absolute top-0 left-0 flex items-center justify-center w-full h-full">
+      <div
+        className={cn(
+          'absolute top-0 left-0',
+          'flex items-center justify-center w-full h-full'
+        )}
+      >
         {player.player ? (
           <p className="text-base">
             {showPlayerInitials(player.player.display_name)}

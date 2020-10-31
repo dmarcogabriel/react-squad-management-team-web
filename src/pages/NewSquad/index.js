@@ -5,6 +5,7 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { differenceInYears } from 'date-fns';
 import lodash from 'lodash';
+import cn from 'classnames';
 import { parseDate } from '../../utils/parseDate';
 import Card from '../../common/Card';
 import Page from '../../common/Page';
@@ -231,9 +232,16 @@ const NewSquad = ({ location, history }) => {
             TEAM INFORMATION
           </h1>
 
-          <div className="flex flex-col md:flex-row justify-center py-5 md:px-20">
+          <div
+            className={cn(
+              'flex flex-col md:flex-row',
+              'justify-center py-5 md:px-20'
+            )}
+          >
             <div className="md:w-full md:px-20">
               <TextInput
+                labelTestid="name-label"
+                dataTestid="name-input"
                 label="Team Name"
                 id="teamName"
                 className="my-3"
@@ -249,7 +257,10 @@ const NewSquad = ({ location, history }) => {
                   <textarea
                     data-testid="description"
                     id="description"
-                    className="resize-none w-full my-3 p-1 border-2 border-gray-400 rounded"
+                    className={cn(
+                      'resize-none w-full my-3 p-1',
+                      'border-2 border-gray-400 rounded'
+                    )}
                     rows="5"
                     value={values.description}
                     onChange={(e) =>
@@ -262,6 +273,8 @@ const NewSquad = ({ location, history }) => {
 
             <div className="md:w-full md:px-20">
               <TextInput
+                labelTestid="website-label"
+                dataTestid="website-input"
                 label="Team website"
                 id="teamWebSite"
                 type="text"
@@ -293,10 +306,20 @@ const NewSquad = ({ location, history }) => {
               CONFIGURE SQUAD
             </h1>
 
-            <div className="flex flex-col md:flex-row justify-center py-5 md:px-20">
+            <div
+              className={cn(
+                'flex flex-col md:flex-row',
+                'justify-center py-5 md:px-20'
+              )}
+            >
               <div className="md:w-full md:px-20">
                 <div>
-                  <div className="flex items-center mb-3 justify-between md:justify-start">
+                  <div
+                    className={cn(
+                      'flex items-center mb-3',
+                      'justify-between md:justify-start'
+                    )}
+                  >
                     <p
                       label="formation"
                       className="inline text-base font-bold md:mr-8"
@@ -319,8 +342,13 @@ const NewSquad = ({ location, history }) => {
                 </div>
 
                 <button
+                  data-testid="submit-button"
                   type="button"
-                  className="bg-gradient-to-t from-secondary-dark to-secondary-light w-full text-white text-base font-bold rounded-sm py-2 mb-5"
+                  className={cn(
+                    'bg-gradient-to-t from-secondary-dark',
+                    'to-secondary-light w-full text-white',
+                    'text-base font-bold rounded-sm py-2 mb-5'
+                  )}
                   onClick={handleSubmit}
                 >
                   Save
@@ -329,7 +357,7 @@ const NewSquad = ({ location, history }) => {
 
               <div className="md:w-full md:px-20">
                 <TextInput
-                  data-testid="search-input"
+                  dataTestid="search-input"
                   className="mb-5"
                   label="Search Players"
                   id="searchPlayers"
@@ -337,15 +365,11 @@ const NewSquad = ({ location, history }) => {
                   onChange={searchPlayers}
                 />
 
-                <div>
+                <div data-testid="players-list">
                   {playersList.map(
                     (player, i) =>
                       showPlayerOnList(player) && (
-                        <DraggablePlayer
-                          data-testid="player"
-                          key={String(i)}
-                          player={player}
-                        />
+                        <DraggablePlayer key={String(i)} player={player} />
                       )
                   )}
                 </div>

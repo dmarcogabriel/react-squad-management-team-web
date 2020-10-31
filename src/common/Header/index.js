@@ -1,9 +1,14 @@
 import React from 'react';
+import cn from 'classnames';
 
 const Header = () => (
   <nav
     data-testid="header"
-    className="flex px-8 py-2 items-center justify-between bg-gradient-to-r from-primary-dark to-secondary-dark text-white"
+    className={cn(
+      'flex items-center justify-between',
+      'px-8 py-2 text-white',
+      'bg-gradient-to-r from-primary-dark to-secondary-dark'
+    )}
   >
     <div>
       <p className="text-lg">Squad Management Tool</p>

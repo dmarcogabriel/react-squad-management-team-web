@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MdAdd } from 'react-icons/md';
 import { CgArrowsV } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
+import cn from 'classnames';
 import Card from '../../../common/Card';
 import SquadItem from './SquadItem';
 import { useSquad } from '../../../contexts/Squad';
@@ -48,7 +49,10 @@ const MyTeams = ({ className }) => {
       RightComponent={() => (
         <Link
           to="create"
-          className="bg-gradient-to-t from-secondary-dark to-secondary-light text-white p-1 rounded-lg"
+          className={cn(
+            'bg-gradient-to-t from-secondary-dark',
+            ' to-secondary-light text-white p-1 rounded-lg'
+          )}
         >
           <MdAdd size={22} />
         </Link>
@@ -62,7 +66,10 @@ const MyTeams = ({ className }) => {
                 data-testid="order-by-name"
                 type="button"
                 onClick={() => handleOrderList('name')}
-                className="flex items-center mx-3 py-2 border-r-2 border-gray-200"
+                className={cn(
+                  'flex items-center mx-3 py-2',
+                  'border-r-2 border-gray-100'
+                )}
               >
                 <p className="font-normal mr-5">Name</p>
 

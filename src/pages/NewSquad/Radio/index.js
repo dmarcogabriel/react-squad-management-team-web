@@ -28,7 +28,10 @@ const Radio = ({ className = '', label, options = [], onChange }) => {
               {option.selected && (
                 <div
                   data-testid="value"
-                  className="bg-primary-dark w-5 h-5 absolute m-auto top-0 bottom-0 right-0 left-0 rounded-full"
+                  className={cn(
+                    'bg-primary-dark w-5 h-5 absolute',
+                    'm-auto top-0 bottom-0 right-0 left-0 rounded-full'
+                  )}
                 />
               )}
             </div>

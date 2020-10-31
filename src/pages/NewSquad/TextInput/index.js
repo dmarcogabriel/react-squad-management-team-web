@@ -8,18 +8,20 @@ const TextInput = ({
   error,
   onChange,
   className = '',
+  dataTestid,
+  labelTestid,
   ...props
 }) => (
   <div className="w-full">
     <label htmlFor={id}>
       <p
-        data-testid="label"
+        data-testid={labelTestid || 'label'}
         className={cn('font-bold text-base', error && 'text-primary-dark')}
       >
         {label}
       </p>
       <input
-        data-testid="input"
+        data-testid={dataTestid || 'input'}
         id={id}
         value={value}
         onChange={(e) => onChange(e.target.value)}

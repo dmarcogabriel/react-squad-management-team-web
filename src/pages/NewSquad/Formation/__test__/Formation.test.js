@@ -178,31 +178,7 @@ describe('<Formation />', () => {
     expect(row3.childElementCount).toEqual(2);
   });
 
-  // it('executes drop event correctly', () => {
-  //   const mockCallback = jest.fn((playerId, id, playerPosition) => ({
-  //     playerId,
-  //     id,
-  //     playerPosition,
-  //   }));
-  //   const mockPlayer = {
-  //     player_id: 'm1',
-  //     fullname: 'Mock Player',
-  //     age: 24,
-  //     nationality: 'Mockland',
-  //   };
-
-  //   const { getByTestId } = render(
-  //     <Component formation={mockFormation3223} onDropPlayer={mockCallback} />
-  //   );
-
-  //   const player = getByTestId('formation-player-pl1');
-
-  //   fireEvent.drop(player, {
-  //     dataTransfer: {
-  //       files: [<DraggablePlayer player={mockPlayer} />, { type: 'player' }],
-  //     },
-  //   });
-  // });
+  // todo: test on drop
 
   it('matches snapshot', () => {
     expect(

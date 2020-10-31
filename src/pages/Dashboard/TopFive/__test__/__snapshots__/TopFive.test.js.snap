@@ -6,7 +6,7 @@ exports[`<TopFive /> match snapshot 1`] = `
   data-testid="card"
 >
   <div
-    className="flex p-8 justify-between items-center border-b-2 border-gray-200"
+    className="flex justify-between items-center p-8 border-b-2 border-gray-200"
   >
     <h1
       className="text-secondary-dark font-bold text-md"

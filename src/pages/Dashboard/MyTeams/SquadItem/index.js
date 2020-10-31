@@ -14,10 +14,12 @@ const SquadItem = ({
 }) => (
   <tr>
     <td>
-      <button
+      <div
         data-testid={squadSelectButtonTestid || 'squadItem'}
-        type="button"
+        role="button"
+        tabIndex={0}
         onClick={() => onClick(squad)}
+        onKeyDown={(e) => e.keyCode === 13 && onClick(squad)}
         className={cn(
           'relative border-b-2 border-gray-200 rounded p-2 flex w-full',
           squad.selected && 'text-primary-dark bg-primary-light'
@@ -53,7 +55,7 @@ const SquadItem = ({
             <MdEdit />
           </Link>
         </div>
-      </button>
+      </div>
     </td>
   </tr>
 );

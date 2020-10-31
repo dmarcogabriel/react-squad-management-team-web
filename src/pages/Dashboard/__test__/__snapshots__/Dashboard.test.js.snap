@@ -3,7 +3,7 @@
 exports[`<Dashboard /> match snapshot 1`] = `
 Array [
   <nav
-    className="flex px-8 py-2 items-center justify-between bg-gradient-to-r from-primary-dark to-secondary-dark text-white"
+    className="flex items-center justify-between px-8 py-2 text-white bg-gradient-to-r from-primary-dark to-secondary-dark"
     data-testid="header"
   >
     <div>
@@ -29,7 +29,7 @@ Array [
     </div>
   </nav>,
   <div
-    className="flex flex-col md:flex-row bg-background justify-center w-full px-5 md:px-10"
+    className="flex flex-col md:flex-row justify-center bg-background w-full px-5 md:px-10"
     data-testid="page"
   >
     <div
@@ -37,7 +37,7 @@ Array [
       data-testid="container"
     >
       <div
-        className="flex p-8 justify-between items-center border-b-2 border-gray-200"
+        className="flex justify-between items-center p-8 border-b-2 border-gray-200"
       >
         <h1
           className="text-secondary-dark font-bold text-md"
@@ -46,7 +46,7 @@ Array [
           My Teams
         </h1>
         <a
-          className="bg-gradient-to-t from-secondary-dark to-secondary-light text-white p-1 rounded-lg"
+          className="bg-gradient-to-t from-secondary-dark  to-secondary-light text-white p-1 rounded-lg"
           href="/create"
           onClick={[Function]}
         >
@@ -84,7 +84,7 @@ Array [
             >
               <th>
                 <button
-                  className="flex items-center mx-3 py-2 border-r-2 border-gray-200"
+                  className="flex items-center mx-3 py-2 border-r-2 border-gray-100"
                   data-testid="order-by-name"
                   onClick={[Function]}
                   type="button"
@@ -174,7 +174,7 @@ Array [
         data-testid="card"
       >
         <div
-          className="flex p-8 justify-between items-center border-b-2 border-gray-200"
+          className="flex justify-between items-center p-8 border-b-2 border-gray-200"
         >
           <h1
             className="text-secondary-dark font-bold text-md"
@@ -220,7 +220,7 @@ Array [
         </div>
       </div>
       <div
-        className="rounded-lg flex flex-col md:flex-row shadow-lg bg-gradient-to-t from-secondary-dark to-secondary-light text-white mb-5"
+        className="flex flex-col md:flex-row shadow-lg rounded-lg bg-gradient-to-t from-secondary-dark to-secondary-light text-white mb-5"
       >
         <div
           className="w-full p-5 border-b-2 md:border-r-2 md:border-b-0 border-opacity-25 border-white"

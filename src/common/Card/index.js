@@ -13,7 +13,12 @@ const Card = ({
     data-testid={dataTestid || 'card'}
     className={cn('bg-white rounded-lg shadow-lg my-10 w-full', className)}
   >
-    <div className="flex p-8 justify-between items-center border-b-2 border-gray-200">
+    <div
+      className={cn(
+        'flex justify-between items-center',
+        'p-8 border-b-2 border-gray-200'
+      )}
+    >
       <h1
         data-testid="card-title"
         className="text-secondary-dark font-bold text-md"

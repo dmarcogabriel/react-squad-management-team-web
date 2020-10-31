@@ -35,6 +35,8 @@ describe('<Player />', () => {
     );
   });
 
+  // todo: test hover
+
   it('match snapshot', () => {
     expect(
       renderer.create(<Component player={mockNullPlayer} />).toJSON()

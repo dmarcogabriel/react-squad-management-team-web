@@ -1,5 +1,6 @@
 import React, { useState, createRef, useEffect } from 'react';
 import { MdClose } from 'react-icons/md';
+import cn from 'classnames';
 
 const Tags = ({ defaultTags, onChange, className }) => {
   const [tags, setTags] = useState([]);
@@ -34,11 +35,16 @@ const Tags = ({ defaultTags, onChange, className }) => {
       <label htmlFor="tags">
         <p className="font-bold text-base">Tags</p>
 
-        <button
+        <div
           data-testid="button-field"
-          type="button"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => e.keyCode === 13 && textInputRef.current.focus()}
           onClick={() => textInputRef.current.focus()}
-          className="flex rounded border-2 border-gray-400 my-3 py-2 w-full min-height-3 z-10"
+          className={cn(
+            'flex rounded border-2 border-gray-400',
+            'my-3 py-2 w-full min-height-3 z-10'
+          )}
         >
           <div data-testid="tags" className="flex flex-wrap relative">
             {tags.map((tag) => (
@@ -46,7 +52,11 @@ const Tags = ({ defaultTags, onChange, className }) => {
                 data-testid={`tag-button-${tag}`}
                 key={tag}
                 type="button"
-                className="flex justify-between items-center py-1 px-2 m-1 bg-primary-dark text-white text-sm rounded-full"
+                className={cn(
+                  'flex justify-between items-center',
+                  'py-1 px-2 m-1',
+                  'bg-primary-dark text-white text-sm rounded-full'
+                )}
                 onClick={() => handleRemoveTag(tag)}
               >
                 <p className="inline mr-2">{tag}</p>
@@ -68,7 +78,7 @@ const Tags = ({ defaultTags, onChange, className }) => {
             value={text}
             onChange={({ target }) => setText(target.value)}
           />
-        </button>
+        </div>
       </label>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
+import cn from 'classnames';
 
 const ICON_SIZE = 24;
 
@@ -60,7 +61,12 @@ const Select = ({ value, options = [], id, onChange }) => {
             {defaultValue}
           </p>
 
-          <div className="border-l-2 border-gray-600 flex items-center justify-center px-1">
+          <div
+            className={cn(
+              'border-l-2 border-gray-600',
+              'flex items-center justify-center px-1'
+            )}
+          >
             {showOptions ? (
               <MdKeyboardArrowUp
                 data-testid="arrow-icon"
@@ -85,9 +91,11 @@ const Select = ({ value, options = [], id, onChange }) => {
               <button
                 data-testid={`option-button-${option.id}`}
                 type="button"
-                className={`option flex justify-center w-full py-3 font-base cursor-pointer ${isSelected(
-                  option.selected
-                )}`}
+                className={cn(
+                  'option flex justify-center w-full py-3',
+                  'font-base cursor-pointer',
+                  isSelected(option.selected)
+                )}
                 data-name={option.label}
                 key={option.id}
                 onClick={() => handleSelectOption(option)}
