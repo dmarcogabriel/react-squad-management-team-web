@@ -22,6 +22,8 @@ And this command to run application:
 
 This command will build the css library, run react in production mode and serve in [localhost on the port 5000](http://localhost:5000).
 
+Or you can access an instance of this app [clicking here](https://dmarco-squad-management-tool.herokuapp.com/)!
+
 ## Testing code
 
 To run tests run the following commands:
