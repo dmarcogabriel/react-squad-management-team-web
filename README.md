@@ -1,4 +1,4 @@
-# Venturus Squad Management Tool
+# ReactJs Squad Management Tool
 
 ### App dependencies
 
